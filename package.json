@@ -37,5 +37,10 @@
     "markdownlint-cli": "0.13.x",
     "npm-run-all": "4.1.x",
     "yorkie": "2.0.x"
-  }
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "frontend/node_modules",
+    "backend/node_modules"
+  ]
 }
