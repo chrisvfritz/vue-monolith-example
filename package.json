@@ -1,0 +1,41 @@
+{
+  "name": "vue-monolith-example",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "yarn --cwd backend && yarn --cwd frontend",
+    "predev": "yarn",
+    "dev:backend": "cd backend && yarn dev",
+    "dev:frontend": "cd frontend && yarn dev",
+    "dev": "run-p dev:*",
+    "lint:eslint": "eslint --ext .js,.vue --fix .",
+    "lint:markdownlint": "markdownlint *.md",
+    "lint:prettier": "prettier --write --loglevel warn \"**/*.{json,js,vue,md}\"",
+    "lint": "run-s lint:*",
+    "prestart": "yarn --frozen-lockfile",
+    "start": "cd backend && yarn start"
+  },
+  "gitHooks": {
+    "pre-commit": "cross-env PRE_COMMIT=true lint-staged"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "engines": {
+    "node": ">=8.11.3",
+    "yarn": ">=1.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-eslint": "3.1.x",
+    "@vue/eslint-config-prettier": "4.0.x",
+    "@vue/eslint-config-standard": "4.0.x",
+    "cross-env": "5.2.x",
+    "imagemin-lint-staged": "0.3.x",
+    "lint-staged": "8.0.x",
+    "markdownlint-cli": "0.13.x",
+    "npm-run-all": "4.1.x",
+    "yorkie": "2.0.x"
+  }
+}

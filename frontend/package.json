@@ -1,0 +1,20 @@
+{
+  "name": "frontend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "predev": "yarn",
+    "dev": "vue-cli-service serve",
+    "prebuild": "yarn --frozen-lockfile",
+    "build": "vue-cli-service build --modern --report"
+  },
+  "dependencies": {
+    "vue": "2.5.17",
+    "vue-router": "3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "3.1.x",
+    "@vue/cli-service": "3.1.x",
+    "vue-template-compiler": "2.5.17"
+  }
+}
