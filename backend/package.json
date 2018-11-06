@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "nodemon --watch src src/main.js",
-    "prestart": "yarn --frozen-lockfile && cd ../frontend && yarn build",
     "start": "node src/main.js"
   },
   "dependencies": {

@@ -3,10 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "predev": "yarn",
     "dev": "vue-cli-service serve",
-    "prebuild": "yarn --frozen-lockfile",
-    "build": "vue-cli-service build --modern --report"
+    "build": "vue-cli-service build --modern"
   },
   "dependencies": {
     "vue": "2.5.17",
