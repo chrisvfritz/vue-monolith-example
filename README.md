@@ -55,7 +55,6 @@ During your build process, make sure to:
 Then start your application with:
 
 ```bash
-# Start the backend server
 yarn start
 ```
 
