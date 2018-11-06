@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "nodemon --watch src src/main.js",
-    "start": "node src/main.js"
+    "start": "cross-env NODE_ENV=production node src/main.js"
   },
   "dependencies": {
     "hapi": "17.7.0",

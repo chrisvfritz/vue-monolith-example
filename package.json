@@ -7,7 +7,7 @@
     "frontend"
   ],
   "scripts": {
-    "predev": "yarn",
+    "predev": "yarn install",
     "dev:backend": "yarn --cwd backend dev",
     "dev:frontend": "yarn --cwd frontend dev",
     "dev": "run-p dev:*",
