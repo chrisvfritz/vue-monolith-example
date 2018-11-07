@@ -1,6 +1,6 @@
 # Vue Monolith Example
 
-This is a simple example of how to structure a monolithic Vue application, with the frontend and backend both living within the same codebase.
+A simple example of how to structure a monolithic Vue application, with the frontend and backend both living within the same codebase.
 
 ## Development
 
