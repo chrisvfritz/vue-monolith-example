@@ -6,6 +6,12 @@
     "backend",
     "frontend"
   ],
+  "cacheDirectories": [
+    "node_modules",
+    "backend/node_modules",
+    "frontend/node_modules",
+    "frontend/dist"
+  ],
   "scripts": {
     "predev": "yarn install",
     "dev:backend": "yarn --cwd backend dev",
@@ -16,17 +22,12 @@
     "lint:prettier": "prettier --write --loglevel warn \"**/*.{json,js,vue,md}\"",
     "lint": "run-s lint:*",
     "build": "yarn --cwd frontend build",
-    "heroku-postbuild": "yarn --cwd frontend build",
+    "heroku-postbuild": "yarn build",
     "start": "yarn --cwd backend start"
   },
   "gitHooks": {
     "pre-commit": "cross-env PRE_COMMIT=true lint-staged"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ],
   "engines": {
     "node": ">=8.11.3",
     "yarn": ">=1.0.0"
@@ -42,11 +43,10 @@
     "npm-run-all": "4.1.x",
     "yorkie": "2.0.x"
   },
-  "cacheDirectories": [
-    "node_modules",
-    "backend/node_modules",
-    "frontend/node_modules",
-    "frontend/dist"
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
   ],
   "eslintConfig": {
     "root": true,
