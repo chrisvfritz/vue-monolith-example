@@ -47,5 +47,92 @@
     "backend/node_modules",
     "frontend/node_modules",
     "frontend/dist"
-  ]
+  ],
+  "eslintConfig": {
+    "root": true,
+    "parserOptions": {
+      "sourceType": "script"
+    },
+    "extends": [
+      "plugin:vue/recommended",
+      "standard",
+      "prettier",
+      "prettier/standard"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "frontend/src/**/*"
+        ],
+        "excludedFiles": "app.config.js",
+        "parserOptions": {
+          "parser": "babel-eslint",
+          "sourceType": "module"
+        },
+        "env": {
+          "browser": true
+        }
+      },
+      {
+        "files": [
+          "**/*.unit.js"
+        ],
+        "parserOptions": {
+          "parser": "babel-eslint",
+          "sourceType": "module"
+        },
+        "env": {
+          "jest": true
+        },
+        "globals": {
+          "mount": false,
+          "shallowMount": false,
+          "shallowMountView": false,
+          "createComponentMocks": false,
+          "createModuleStore": false
+        }
+      }
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "dist/"
+  ],
+  "lint-staged": {
+    "*.json": [
+      "prettier --write --loglevel warn",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "prettier --write --loglevel warn",
+      "git add"
+    ],
+    "*.vue": [
+      "eslint --fix",
+      "prettier --write --loglevel warn",
+      "git add"
+    ],
+    "*.md": [
+      "markdownlint",
+      "prettier --write --loglevel warn",
+      "git add"
+    ],
+    "*.{png,jpeg,jpg,gif,svg}": [
+      "imagemin-lint-staged",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "arrowParens": "avoid",
+    "proseWrap": "never"
+  }
 }
