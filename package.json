@@ -17,10 +17,13 @@
     "dev:backend": "yarn --cwd backend dev",
     "dev:frontend": "yarn --cwd frontend dev",
     "dev": "run-p dev:*",
-    "lint:eslint": "eslint --ext .js,.vue --fix .",
-    "lint:markdownlint": "markdownlint *.md",
-    "lint:prettier": "prettier --write --loglevel warn \"**/*.{json,js,vue,md}\"",
-    "lint": "run-s lint:*",
+    "lint:eslint": "eslint --fix",
+    "lint:markdownlint": "markdownlint",
+    "lint:prettier": "prettier --write --loglevel warn",
+    "lint:all:eslint": "yarn lint:eslint --ext .js,.vue",
+    "lint:all:markdownlint": "yarn lint:markdownlint *.md",
+    "lint:all:prettier": "yarn lint:prettier \"**/*.{json,js,vue,md}\"",
+    "lint": "run-s lint:all:*",
     "build": "yarn --cwd frontend build",
     "heroku-postbuild": "yarn build",
     "start": "yarn --cwd backend start"
@@ -80,22 +83,22 @@
   ],
   "lint-staged": {
     "*.json": [
-      "prettier --write --loglevel warn",
+      "yarn lint:prettier",
       "git add"
     ],
     "*.js": [
-      "eslint --fix",
-      "prettier --write --loglevel warn",
+      "yarn lint:eslint",
+      "yarn lint:prettier",
       "git add"
     ],
     "*.vue": [
-      "eslint --fix",
-      "prettier --write --loglevel warn",
+      "yarn lint:eslint",
+      "yarn lint:prettier",
       "git add"
     ],
     "*.md": [
       "markdownlint",
-      "prettier --write --loglevel warn",
+      "yarn lint:prettier",
       "git add"
     ],
     "*.{png,jpeg,jpg,gif,svg}": [
