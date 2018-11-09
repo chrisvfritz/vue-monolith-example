@@ -26,7 +26,7 @@
     "start": "yarn --cwd backend start"
   },
   "gitHooks": {
-    "pre-commit": "cross-env PRE_COMMIT=true lint-staged"
+    "pre-commit": "lint-staged"
   },
   "engines": {
     "node": ">=8.11.3",
