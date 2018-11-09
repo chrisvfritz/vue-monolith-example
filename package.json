@@ -64,32 +64,12 @@
         "files": [
           "frontend/src/**/*"
         ],
-        "excludedFiles": "app.config.js",
         "parserOptions": {
           "parser": "babel-eslint",
           "sourceType": "module"
         },
         "env": {
           "browser": true
-        }
-      },
-      {
-        "files": [
-          "**/*.unit.js"
-        ],
-        "parserOptions": {
-          "parser": "babel-eslint",
-          "sourceType": "module"
-        },
-        "env": {
-          "jest": true
-        },
-        "globals": {
-          "mount": false,
-          "shallowMount": false,
-          "shallowMountView": false,
-          "createComponentMocks": false,
-          "createModuleStore": false
         }
       }
     ]
